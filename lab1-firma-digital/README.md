@@ -41,7 +41,7 @@ Demostrar cómo la criptografía asimétrica (firma digital) permite garantizar 
 mkdir ~/lab1_firma_digital
 cd ~/lab1_firma_digital
 
-cat > config_bancaria.txt
+cat config_bancaria.txt
 
 CUENTA_ORIGEN=12345678
 MONTO=1000000
