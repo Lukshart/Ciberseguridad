@@ -142,7 +142,7 @@ sed -i 's/1000001/9999999/' config_bancaria.txt
 ```
 <img width="541" height="190" alt="image" src="https://github.com/user-attachments/assets/770e2a1b-e0b5-498a-ba7b-581cacc251b1" />
 
-
+---
 Verificamos el archivo:
 ```bash
 openssl dgst -sha256 -verify publica.pem -signature firma.bin config_bancaria.txt
