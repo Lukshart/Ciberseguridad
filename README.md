@@ -30,7 +30,7 @@ Cada laboratorio simula un escenario real de ataque y defensa, aplicando herrami
 
 | # | Laboratorio | Tema | Estado |
 |---|-------------|------|--------|
-| 1 | [Lab 1 →](lab1/README.md) | **Firma Digital y Verificación de Integridad** | 🔄 En progreso |
+| 1 | [Lab 1 →](lab1-firma-digital) | **Firma Digital y Verificación de Integridad** | 🔄 En progreso |
 | 2 | [Lab 2 →](lab2/README.md) | **** | 🔄 En progreso |
 | 3 | [Lab 3 →](lab3/README.md) | **** | 🔄 En progreso |
 
