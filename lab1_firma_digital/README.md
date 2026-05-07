@@ -1,59 +1,47 @@
-# 🛡️ LABORATORIOS DE CIBERSEGURIDAD 🛡️
-![Status](https://img.shields.io/badge/STATUS-EN_DESARROLLO-yellow)
-![License](https://img.shields.io/badge/license-MIT-green)
-![Kali](https://img.shields.io/badge/Kali_Linux-557C94?logo=kalilinux&logoColor=white)
-![Ubuntu](https://img.shields.io/badge/Ubuntu-E95420?logo=ubuntu&logoColor=white)
+# Laboratorio: Firma Digital y Verificación de Integridad
+
+**Autor:** Matias Alamos Hinojosa   
+**Entorno:** Parrot OS (Auditor)
+---
+
+## Objetivo del Laboratorio
+
+Demostrar cómo la criptografía asimétrica (firma digital) permite garantizar la **integridad** y **autenticidad** de archivos críticos, simulando un escenario real donde un archivo de configuración bancaria debe ser firmado antes de subirse a producción.
 
 ---
 
-## 📋 Tabla de Contenidos
+## Escenario Simulado
 
-- [🎯 Descripción General](#-descripción-general)
-- [📊 Laboratorios](#-laboratorios)
-
----
-
-## 🎯 Descripción General
-
-Repositorio que contiene **laboratorios prácticos** de Ciberseguridad.  
-Cada laboratorio simula un escenario real de ataque y defensa, aplicando herramientas y marcos de trabajo estándar de la industria.
-
-| Área | Tecnologías |
-|------|-------------|
-| 🔐 Criptografía | OpenSSL, SHA-256, RSA |
-|  |  |
-|  |  |
+| Elemento | Descripción |
+|----------|-------------|
+| **Archivo crítico** | `config_bancaria.txt` (montos, cuentas, fechas) |
+| **Riesgo** | Un atacante modifica el monto de una transferencia |
+| **Solución** | Firma digital con llave privada / verificación con llave pública |
 
 ---
 
-## 📊 Laboratorios
+## Comandos Utilizados
 
-| # | Laboratorio | Tema | Estado |
-|---|-------------|------|--------|
-| 1 | [Lab 1 →](lab1/README.md) | **Firma Digital y Verificación de Integridad** | 🔄 En progreso |
-| 2 | [Lab 2 →](lab2/README.md) | **** | 🔄 En progreso |
-| 3 | [Lab 3 →](lab3/README.md) | **** | 🔄 En progreso |
-
-<details>
-<summary>📖 <b>Ver detalles de cada laboratorio</b></summary>
-
-| Laboratorio | Qué aprenderás |
-|-------------|----------------|
-| **Lab 1** | Generación de llaves RSA, firma digital, verificación de integridad con OpenSSL |
-| **Lab 2** |  |
-| **Lab 3** |  |
-
-</details>
+| Comando | Función |
+|---------|---------|
+| `sha256sum archivo` | Genera hash SHA-256 |
+| `openssl genrsa -out privada.pem 2048` | Genera llave privada RSA |
+| `openssl rsa -in privada.pem -pubout -out publica.pem` | Extrae llave pública |
+| `openssl dgst -sha256 -sign privada.pem -out firma.bin archivo` | Firma digitalmente un archivo |
+| `openssl dgst -sha256 -verify publica.pem -signature firma.bin archivo` | Verifica firma |
 
 ---
 
-## 🛠️ Requisitos
+## Procedimiento Paso a Paso
 
-### Software necesario
+### 1. Crear el archivo de configuración
 
-| Herramienta | Versión | Instalación |
-|-------------|---------|-------------|
-| Kali Linux | 2024.1+ | Preinstalado en máquina virtual |
-| Ubuntu Server | 22.04 LTS | Preinstalado en máquina virtual |
-| OpenSSL | 3.0+ | `sudo apt install openssl` |
-| Git | 2.25+ | `sudo apt install git` |
+```bash
+mkdir ~/lab1_firma_digital
+cd ~/lab1_firma_digital
+
+cat config_bancaria.txt
+
+CUENTA_ORIGEN=12345678
+MONTO=1000000
+```
