@@ -40,8 +40,33 @@ Demostrar cómo la criptografía asimétrica (firma digital) permite garantizar 
 mkdir ~/lab1_firma_digital
 cd ~/lab1_firma_digital
 
-cat config_bancaria.txt
-
+cat > config_bancaria.txt << 'EOF'
 CUENTA_ORIGEN=12345678
 MONTO=1000000
+EOF
 ```
+<img width="479" height="312" alt="image" src="https://github.com/user-attachments/assets/7a51fb53-ed14-41ef-99df-2b041062b6b3" />
+
+### 2. Generar hash del archivo
+```bash
+sha256sum config_bancaria.txt
+```
+<img width="882" height="192" alt="image" src="https://github.com/user-attachments/assets/f9efa2db-6a01-461d-95f8-9d004ac24ed4" />
+
+### 3. Simular ataque (modificación de un bit)
+
+```bash
+# El atacante cambia un 0 por un 1 en el monto
+sed -i 's/1000000/1000001/' config_bancaria.txt
+```
+<img width="547" height="245" alt="image" src="https://github.com/user-attachments/assets/3cedcbc1-7e5a-41cc-91b8-cac3248e1789" />
+
+### 4. Verificar hash
+
+```bash
+sha256sum config_bancaria.txt
+```
+<img width="881" height="185" alt="image" src="https://github.com/user-attachments/assets/4a27905a-fae5-4335-a915-398b181271f6" />
+
+### 5. Conclusión
+Un cambio microscópico produce un efecto bola de nieve en el hash.
