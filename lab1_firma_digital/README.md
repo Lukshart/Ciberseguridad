@@ -1,7 +1,7 @@
 # Laboratorio: Firma Digital y Verificación de Integridad
-
 **Autor:** Matias Alamos Hinojosa   
 **Entorno:** Parrot OS (Auditor)
+
 ---
 
 ## Objetivo del Laboratorio
