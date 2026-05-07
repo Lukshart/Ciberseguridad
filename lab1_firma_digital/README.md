@@ -65,10 +65,10 @@ sha256sum config_bancaria.txt
 ```
 <img width="881" height="185" alt="image" src="https://github.com/user-attachments/assets/4a27905a-fae5-4335-a915-398b181271f6" />
 
-### 5. Conclusión
+### Conclusión sobre el hash
 Un cambio microscópico produce un efecto bola de nieve en el hash.
 
-### 6. Generar llaves RSA
+### 5. Generar llaves RSA
 Generar llave privada:
 ```bash
 openssl genrsa -out privada.pem 2048
@@ -107,7 +107,7 @@ openssl rsa -in privada.pem -pubout -out publica.pem
 
 <img width="656" height="299" alt="image" src="https://github.com/user-attachments/assets/591c8a0d-4f45-4419-b1e6-cd75656e62b9" />
 
-### 7. Firmar el archivo 
+### 6. Firmar el archivo 
 ```bash
 openssl dgst -sha256 -sign privada.pem -out firma.bin config_bancaria.txt
 ```
@@ -120,7 +120,7 @@ openssl dgst -sha256 -sign privada.pem -out firma.bin config_bancaria.txt
 | `-out firma.bin` | Guarda el resultado (la firma) en el archivo firma.bin |
 | `config_bancaria.txt` | El archivo a firmar |
 
-### 8. Verificar el archivo 
+### 7. Verificar el archivo 
 ```bash
 openssl dgst -sha256 -verify publica.pem -signature firma.bin config_bancaria.txt
 ```
@@ -148,3 +148,69 @@ Verificamos el archivo:
 openssl dgst -sha256 -verify publica.pem -signature firma.bin config_bancaria.txt
 ```
 <img width="1336" height="171" alt="image" src="https://github.com/user-attachments/assets/814b504c-8123-4f10-8fc9-d18bf35bd3ad" />
+
+---
+
+### Caso de ejemplo
+
+**Contexto:** Un banco chileno desarrolla una actualización crítica para su aplicación de transferencias. El software pasa por el pipeline de integración continua y debe ser desplegado en servidores de producción.
+
+**Riesgo:** Un atacante modifica el binario o sus configuraciones durante la transferencia del artefacto entre el pipeline de integración continua y el servidor de producción.
+
+**Solución:** Firmar digitalmente un manifiesto que contiene los hashes de todos los archivos del despliegue.
+
+### 1. Hashear cada uno de los archivos (Desarrollo)
+Estructura del directorio:
+
+<img width="621" height="216" alt="image" src="https://github.com/user-attachments/assets/185e748a-2cbc-4493-a478-0c3a92356ffb" />
+
+---
+
+```bash
+find transferencias -type f -exec sha256sum {} \; | sort > MANIFIESTO.txt
+```
+
+| Argumento | Función |
+|---------|---------|
+| `find transferencias -type f` | Busca todos los archivos dentro de la carpeta |
+| `-exec sha256sum {} \;` | Calcula el hash SHA-256 de cada archivo |
+| `sort` | Ordena alfabéticamente los resultados |
+| `> MANIFIESTO.txt` | Guarda la lista en el archivo MANIFIESTO.txt |
+
+<img width="1120" height="140" alt="image" src="https://github.com/user-attachments/assets/ed323d96-2bec-4e68-8303-5731bf7b1518" />
+
+### 2. Firmar el manifiesto con la llave privada
+```bash
+openssl dgst -sha256 -sign privada.pem -out MANIFIESTO.sig MANIFIESTO.txt
+```
+
+---
+
+### 3. Verificación de manifiesto (Producción)
+```bash
+openssl dgst -sha256 -verify publica.pem -signature MANIFIESTO.sig MANIFIESTO.txt
+```
+<img width="877" height="71" alt="image" src="https://github.com/user-attachments/assets/44f67904-1976-4d7a-9c30-1de3a9aa4fbe" />
+
+### 4. Verificación de los archivos
+Se vuelve a generar un manifiesto, esta vez con los datos recibidos.
+```bash
+find transferencias -type f -exec sha256sum {} \; | sort > MANIFIESTO_actual.txt
+```
+
+<img width="465" height="247" alt="image" src="https://github.com/user-attachments/assets/fb4605c5-7623-427f-b056-a39a79f0ea81" />
+
+---
+
+Se comparan ambos archivos.
+
+```bash
+diff MANIFIESTO.txt MANIFIESTO_actual.txt; echo $?
+```
+| Código | Significado |
+|---------|---------|
+| `0` | Archivos iguales |
+| `1` | Archivos diferentes |
+| `2` | Error |
+
+### 5. Simular manipulación
