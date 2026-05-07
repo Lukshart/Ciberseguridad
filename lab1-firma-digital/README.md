@@ -38,14 +38,10 @@ Demostrar cómo la criptografía asimétrica (firma digital) permite garantizar 
 ### 1. Crear el archivo de configuración
 
 ```bash
-mkdir ~/lab_firma_digital
-cd ~/lab_firma_digital
+mkdir ~/lab1_firma_digital
+cd ~/lab1_firma_digital
 
-cat > config_bancaria.txt << 'EOF'
-# Configuración de Transferencias Bancarias
+cat > config_bancaria.txt
+
 CUENTA_ORIGEN=12345678
-CUENTA_DESTINO=87654321
-MONTO_TRANSFERENCIA=1000000
-BANCO_ORIGEN=Banco de Chile
-BANCO_DESTINO=Banco Estado
-EOF
+MONTO=1000000
