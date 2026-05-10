@@ -283,8 +283,8 @@ El laboratorio demuestra que la firma digital y la verificación de integridad s
 ### Recomendaciones
 | Prioridad | Medida |
 |---------|---------|
-| Alta | Firmar **TODOS** los binarios y configuraciones antes de producción |
-| Alta | Verificar firma Y hashes en cada despliegue |
-| Alta | Rotar la llave cada 6 - 12 meses |
-| Media | Almacenar llaves privadas en vaults |
-| Media | Automatizar bloqueo del pipeline si falla verificación |
+| 🔴Alta | Firmar **TODOS** los binarios y configuraciones antes de producción |
+| 🔴Alta | Verificar firma Y hashes en cada despliegue |
+| 🔴Alta | Rotar la llave cada 6 - 12 meses |
+| 🟡Media | Almacenar llaves privadas en vaults |
+| 🟡Media | Automatizar bloqueo del pipeline si falla verificación |
