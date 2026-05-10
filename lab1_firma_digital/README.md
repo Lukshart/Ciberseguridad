@@ -177,7 +177,7 @@ find transferencias -type f -exec sha256sum {} \; | sort > MANIFIESTO.txt
 | `sort` | Ordena alfabéticamente los resultados |
 | `> MANIFIESTO.txt` | Guarda la lista en el archivo MANIFIESTO.txt |
 
-<img width="1120" height="140" alt="image" src="https://github.com/user-attachments/assets/ed323d96-2bec-4e68-8303-5731bf7b1518" />
+<img width="1109" height="173" alt="image" src="https://github.com/user-attachments/assets/fc716fcf-545a-4a92-8a72-99cfedc3f10f" />
 
 ### 2. Firmar el manifiesto con la llave privada
 ```bash
@@ -186,14 +186,15 @@ openssl dgst -sha256 -sign privada.pem -out MANIFIESTO.sig MANIFIESTO.txt
 
 ---
 
-### 3. Verificación de manifiesto (Producción)
+### 3. Verificación de manifiesto (Despliegue)
+Antes de un despliegue, el equipo debe verificar que los archivos provienen de una fuente autorizada.
 ```bash
 openssl dgst -sha256 -verify publica.pem -signature MANIFIESTO.sig MANIFIESTO.txt
 ```
 <img width="877" height="71" alt="image" src="https://github.com/user-attachments/assets/44f67904-1976-4d7a-9c30-1de3a9aa4fbe" />
 
 ### 4. Verificación de los archivos
-Se vuelve a generar un manifiesto, esta vez con los datos recibidos.
+Una vez se comprobada la veracidad de la firma se recomienda verificar cada archivo individualmente para evitar fraudes post-firma.
 ```bash
 find transferencias -type f -exec sha256sum {} \; | sort > MANIFIESTO_actual.txt
 ```
@@ -213,4 +214,77 @@ diff MANIFIESTO.txt MANIFIESTO_actual.txt; echo $?
 | `1` | Archivos diferentes |
 | `2` | Error |
 
+<img width="583" height="135" alt="image" src="https://github.com/user-attachments/assets/ed22307e-7c56-4cd3-9d10-5c7b0ce9be97" />
+
 ### 5. Simular manipulación
+Se realizan cambios sutiles
+```bash
+#ANTES
+┌─[luk@parrot]─[~/Desktop/lab1_firma_digital/transferencias]
+└──╼ $cat conf
+conf
+
+┌─[luk@parrot]─[~/Desktop/lab1_firma_digital/transferencias/credentials]
+└──╼ $ cat admin_credentials
+USER=admin
+PASS=2314
+```
+```bash
+#DESPUÉS
+┌─[luk@parrot]─[~/Desktop/lab1_firma_digital/transferencias]
+└──╼ $cat conf
+conf
+alterada
+
+┌─[luk@parrot]─[~/Desktop/lab1_firma_digital/transferencias/credentials]
+└──╼ $ cat admin_credentials
+USER=admin
+PASS=admin
+```
+### 6. Recalcular el manifiesto actual (después de la manipulación)
+```bash
+find transferencias -type f -exec sha256sum {} \; | sort > MANIFIESTO_actual.txt
+```
+
+### 7. Comparar errores
+```bash
+diff MANIFIESTO.txt MANIFIESTO_actual.txt
+
+echo $?
+```
+
+<img width="1135" height="305" alt="image" src="https://github.com/user-attachments/assets/e1ddc01d-7dd8-462b-b018-bb3484a187f3" />
+
+---
+
+El código `2,3c2,3` indica que las líneas 2 y 3 del archivo original `MANIFIESTO.txt` fueron cambiadas `c` por las líneas 2 y 3 del archivo `MANIFIESTO_actual.txt`, mientras que el código `1` afirma que existe una **MODIFICACIÓN** en los archivos.
+
+---
+
+### Conclusión final
+El laboratorio demuestra que la firma digital y la verificación de integridad son controles esenciales para proteger Organizaciones de Importancia Vital (OIV) según la Ley 21.663.
+
+**Aplicación defensiva:**
+
+| Acción | Implementación |
+|---------|---------|
+| Prevención | Firmar manifiestos antes del despliegue evita la ejecución de software manipulado |
+| Detección | La comparación de hashes (`diff` + código `1`) alerta sobre modificaciones no autorizadas |
+| Respuesta | El pipeline debe detenerse automáticamente ante cualquier falla de verificación |
+
+**Cumplimiento Ley 21.663:**
+
+| Requisito legal | Cumplimiento |
+|---------|---------|
+| Integridad de activos críticos | Los hashes detectan cualquier alteración |
+| Trazabilidad de acciones | La firma digital provee no repudio |
+| Reporte oportuno al CSIRT | La detección automática permite notificar < 3 horas |
+
+### Recomendaciones
+| Prioridad | Medida |
+|---------|---------|
+| Alta | Firmar **TODOS** los binarios y configuraciones antes de producción |
+| Alta | Verificar firma Y hashes en cada despliegue |
+| Alta | Rotar la llave cada 6 - 12 meses |
+| Media | Almacenar llaves privadas en vaults |
+| Media | Automatizar bloqueo del pipeline si falla verificación |
