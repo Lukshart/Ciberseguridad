@@ -68,7 +68,7 @@ sha256sum config_bancaria.txt
 ### Conclusión sobre el hash
 Un cambio microscópico produce un efecto bola de nieve en el hash.
 
-### 5. Generar llaves RSA
+### 5. Generar llaves RSA (Fase de Hardening)
 Generar llave privada:
 ```bash
 openssl genrsa -out privada.pem 2048
