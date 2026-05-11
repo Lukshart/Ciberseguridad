@@ -183,14 +183,14 @@ find transferencias -type f -exec sha256sum {} \; | sort > MANIFIESTO.txt
 
 <img width="1109" height="173" alt="image" src="https://github.com/user-attachments/assets/fc716fcf-545a-4a92-8a72-99cfedc3f10f" />
 
-### 2. Firmar el manifiesto con la llave privada
+### 2. Firmar el Manifiesto con la llave privada
 ```bash
 openssl dgst -sha256 -sign privada.pem -out MANIFIESTO.sig MANIFIESTO.txt
 ```
 
 ---
 
-### 3. Verificación de manifiesto (Despliegue)
+### 3. Verificación de Manifiesto (Despliegue)
 Antes de un despliegue, el equipo debe verificar que los archivos provienen de una fuente autorizada.
 ```bash
 openssl dgst -sha256 -verify publica.pem -signature MANIFIESTO.sig MANIFIESTO.txt
@@ -220,7 +220,7 @@ diff MANIFIESTO.txt MANIFIESTO_actual.txt; echo $?
 
 <img width="583" height="135" alt="image" src="https://github.com/user-attachments/assets/ed22307e-7c56-4cd3-9d10-5c7b0ce9be97" />
 
-### 5. Simular manipulación
+### 5. Simular Manipulación
 Se realizan cambios sutiles
 ```bash
 #ANTES
@@ -245,7 +245,7 @@ alterada
 USER=admin
 PASS=admin
 ```
-### 6. Recalcular el manifiesto actual (después de la manipulación)
+### 6. Recalcular el Manifiesto actual (después de la manipulación)
 ```bash
 find transferencias -type f -exec sha256sum {} \; | sort > MANIFIESTO_actual.txt
 ```
@@ -265,7 +265,7 @@ El código `2,3c2,3` indica que las líneas 2 y 3 del archivo original `MANIFIES
 
 ---
 
-### Conclusiones finales
+### Conclusiones Finales
 El laboratorio demuestra que la firma digital y la verificación de integridad son controles esenciales para proteger Organizaciones de Importancia Vital (OIV) según la Ley 21.663.
 
 **Aplicación defensiva:**
