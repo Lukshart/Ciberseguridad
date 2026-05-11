@@ -1,7 +1,7 @@
 # Laboratorio: Ataque y Defensa de Credenciales (MFA)
 
 **Autor:** Matias Alamos Hinojosa  
-**Entorno:** Parrot OS (Atacante) / Ubuntu Server (Víctima)
+**Entorno:** Parrot OS (Atacante) / Ubuntu Server 22.04.5 (Víctima)
 
 ---
 
@@ -14,7 +14,7 @@ Demostrar cómo un atacante puede vulnerar una contraseña débil mediante un at
 | Elemento | Descripción |
 |---|---|
 | **Servidor objetivo** | Ubuntu Server con SSH expuesto |
-| **Vulnerabilidad inicial** | Contraseña débil (`ubuntu`, `123456`, etc.) |
+| **Vulnerabilidad inicial** | Contraseña débil (`ubuntu`, `admin123`, etc.) |
 | **Ataque** | Hydra realiza fuerza bruta contra SSH |
 | **Defensa implementada** | MFA con Google Authenticator (contraseña + token temporal) |
 
@@ -48,8 +48,6 @@ hydra -l ubuntu -P rockyou.txt ssh://IP
 
 <img width="1200" height="434" alt="image" src="https://github.com/user-attachments/assets/53326c23-f716-4998-ab85-55aa48f8dddb" />
 
-Hydra fue capaz de vulnerar la contraseña mediante un ataque de diccionario.
-
 ### 3. Verificar Acceso
 ```bash
 ssh ubuntu@IP
@@ -70,6 +68,69 @@ sudo apt install libpam-google-authenticator -y
 ```bash
 google-authenticator
 ```
+Configuración deseada.
+
+| Configuración | Argumento | Efecto |
+|---|---|---|
+| Do you want authentication tokens to be time-based? | `y` | Tokens temporales |
+| Do you want me to update your "~/.google_authenticator" file? | `y` | Guarda configuración |
+| Do you want to disallow multiple uses of the same token? | `y` | Evita reuso de tokens |
+| Do you want to increase the original window size? | `n` | Mantiene ventana de tiempo entre tokens |
+| Do you want to enable rate-limiting? | `y` | Limita intentos fallidos |
+
+### 3. Configurar SSH para usar MFA
+Para activar la autenticación multifactor es necesario modificar los siguientes archivos:
+- `/etc/pam.d/sshd`
+- `/etc/ssh/sshd_config`
+```bash
+sudo nano /etc/pam.d/sshd
+```
+
+Se añade `auth google pam_google_authenticator.so`
+
+<img width="816" height="615" alt="image" src="https://github.com/user-attachments/assets/ef445ef4-6dcb-4bcb-9615-bf03d7d18b98" />
+
+---
+
+```bash
+sudo nano /etc/ssh/sshd_config
+```
+
+Se modifican y se añaden las siguientes líneas:
 ```bash
 
+KbdInteractiveAuthentication yes
+UsePAM yes
+
 ```
+
+<img width="817" height="231" alt="image" src="https://github.com/user-attachments/assets/7c4577df-7dba-40ab-886b-45609bd7c0e0" />
+
+### 4. Prueba de defensa
+El atacante nuevamente intenta ingresar al servidor a través de SSH.
+```bash
+ssh ubuntu@IP
+```
+
+<img width="652" height="169" alt="image" src="https://github.com/user-attachments/assets/5201e65f-d041-4ad2-8d07-64493fc8ca14" />
+
+---
+
+Tras 3 intentos fallidos, el sistema bloquea al host.
+
+<img width="481" height="318" alt="image" src="https://github.com/user-attachments/assets/8522a5cc-95fc-4730-8857-ddd0f82f556c" />
+
+---
+
+Logs desde el servidor.
+
+<img width="837" height="367" alt="image" src="https://github.com/user-attachments/assets/16ab173e-0f10-4f16-a857-33ece990332d" />
+
+---
+
+### Resultados
+
+| Fase | Resultado | Conclusión |
+|---|---|---|
+| Ataque inicial | Hydra encuentra credenciales | Contraseña débil = vulnerable |
+| Implementación de MFA | El atacante no logra ingresar | MFA bloquea ataques (manuales y/o automatizados) |
