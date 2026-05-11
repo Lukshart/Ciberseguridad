@@ -106,7 +106,7 @@ UsePAM yes
 
 <img width="817" height="231" alt="image" src="https://github.com/user-attachments/assets/7c4577df-7dba-40ab-886b-45609bd7c0e0" />
 
-### 4. Prueba de defensa
+### 4. Prueba de Defensa
 El atacante nuevamente intenta ingresar al servidor a través de SSH.
 ```bash
 ssh ubuntu@IP
@@ -128,7 +128,7 @@ Logs desde el servidor.
 
 ---
 
-### Conclusiones finales
+### Conclusiones Finales
 - Las contraseñas por sí solas son insuficientes.
 - La implementación de Autenticación Multifactor (MFA) agrega una capa defensiva crítica que bloquea el acceso incluso si la contraseña es comprometida.
 
