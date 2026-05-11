@@ -61,4 +61,4 @@ ssh ubuntu@IP
 Se logró acceder al sistema.
 
 ### Fase 2: Hardening - Implementación de MFA
-
+### 1. Instalar Google Authenticator PAM
