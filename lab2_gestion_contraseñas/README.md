@@ -128,9 +128,24 @@ Logs desde el servidor.
 
 ---
 
-### Resultados
+### Conclusión final
+- Hydra es capaz de comprometer las credenciales del sistema en cuestión de minutos.
+- MFA bloqueó completamente el vector de ataque, incluso con credenciales válidas.
 
-| Fase | Resultado | Conclusión |
-|---|---|---|
-| Ataque inicial | Hydra encuentra credenciales | Contraseña débil = vulnerable |
-| Implementación de MFA | El atacante no logra ingresar | MFA bloquea ataques (manuales y/o automatizados) |
+**Posibles vectores de ataque**
+| Vulnerabilidad | Mitigación | 
+|---|---|
+| Fuerza bruta/diccionario | No es suficiente sola |
+| Phishing, reuso, filtraciones | Ataque requiere TOKEN | 
+| Captura de tráfico | Tokens expiran (30 segundos) |
+
+**¿Por qué MFA es importante?**
+
+Las contraseñas se roban, filtran o adivinan. MFA añade una segunda capa (algo que tienes) que el atacante no posee.
+
+### Recomendaciones en entornos productivos
+| Medida | Implementación |
+|---|---|
+| MFA obligatorio | Todo acceso SSH debe requerir contraseña + token (o llave + token) | 
+| Rate limiting | Limitar intentos fallidos |
+| Monitoreo | Logs para detectar intentos fallidos de MFA |
