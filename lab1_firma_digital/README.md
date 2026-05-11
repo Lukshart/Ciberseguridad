@@ -34,6 +34,7 @@ Demostrar cómo la criptografía asimétrica (firma digital) permite garantizar 
 
 ## Procedimiento Paso a Paso
 
+### Fase 1: Ataque
 ### 1. Crear el archivo de configuración
 ```bash
 mkdir ~/lab1_firma_digital
@@ -68,7 +69,10 @@ sha256sum config_bancaria.txt
 ### Conclusión sobre el hash
 Un cambio microscópico produce un efecto bola de nieve en el hash.
 
-### 5. Generar llaves RSA (Fase de Hardening)
+---
+
+### Fase 2: Hardening
+### 5. Generar llaves RSA
 Generar llave privada:
 ```bash
 openssl genrsa -out privada.pem 2048
