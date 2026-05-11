@@ -265,7 +265,7 @@ El código `2,3c2,3` indica que las líneas 2 y 3 del archivo original `MANIFIES
 
 ---
 
-### Conclusión final
+### Conclusiones finales
 El laboratorio demuestra que la firma digital y la verificación de integridad son controles esenciales para proteger Organizaciones de Importancia Vital (OIV) según la Ley 21.663.
 
 **Aplicación defensiva:**
