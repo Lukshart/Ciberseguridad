@@ -128,7 +128,7 @@ Logs desde el servidor.
 
 ---
 
-### Conclusión final
+### Conclusiones finales
 - Las contraseñas por sí solas son insuficientes.
 - La implementación de Autenticación Multifactor (MFA) agrega una capa defensiva crítica que bloquea el acceso incluso si la contraseña es comprometida.
 
