@@ -72,7 +72,7 @@ Un cambio microscópico produce un efecto bola de nieve en el hash.
 ---
 
 ### Fase 2: Hardening
-### 5. Generar llaves RSA
+### 1. Generar llaves RSA
 Generar llave privada:
 ```bash
 openssl genrsa -out privada.pem 2048
@@ -111,7 +111,7 @@ openssl rsa -in privada.pem -pubout -out publica.pem
 
 <img width="656" height="299" alt="image" src="https://github.com/user-attachments/assets/591c8a0d-4f45-4419-b1e6-cd75656e62b9" />
 
-### 6. Firmar el archivo 
+### 2. Firmar el archivo 
 ```bash
 openssl dgst -sha256 -sign privada.pem -out firma.bin config_bancaria.txt
 ```
@@ -124,7 +124,7 @@ openssl dgst -sha256 -sign privada.pem -out firma.bin config_bancaria.txt
 | `-out firma.bin` | Guarda el resultado (la firma) en el archivo firma.bin |
 | `config_bancaria.txt` | El archivo a firmar |
 
-### 7. Verificar el archivo 
+### 3. Verificar el archivo 
 ```bash
 openssl dgst -sha256 -verify publica.pem -signature firma.bin config_bancaria.txt
 ```
@@ -139,7 +139,7 @@ openssl dgst -sha256 -verify publica.pem -signature firma.bin config_bancaria.tx
 
 <img width="885" height="174" alt="image" src="https://github.com/user-attachments/assets/e8044933-4f9d-4869-8775-81d9cf8e9204" />
 
-### 8. Demostrar que una modificación invalida la firma
+### 4. Demostrar que una modificación invalida la firma
 Modificamos el archivo:
 ```bash
 sed -i 's/1000001/9999999/' config_bancaria.txt
