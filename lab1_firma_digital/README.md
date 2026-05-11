@@ -282,7 +282,6 @@ El laboratorio demuestra que la firma digital y la verificación de integridad s
 |---------|---------|
 | Integridad de activos críticos | Los hashes detectan cualquier alteración |
 | Trazabilidad de acciones | La firma digital provee no repudio |
-| Reporte oportuno al CSIRT | La detección automática permite notificar < 3 horas |
 
 ### Recomendaciones
 | Prioridad | Medida |
