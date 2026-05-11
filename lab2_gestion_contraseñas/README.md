@@ -62,3 +62,6 @@ Se logró acceder al sistema.
 
 ### Fase 2: Hardening - Implementación de MFA
 ### 1. Instalar Google Authenticator PAM
+```bash
+sudo apt install libpam-google-authenticator -y
+```
