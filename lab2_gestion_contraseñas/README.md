@@ -129,8 +129,8 @@ Logs desde el servidor.
 ---
 
 ### Conclusión final
-- Hydra es capaz de comprometer las credenciales del sistema en cuestión de minutos.
-- MFA bloqueó completamente el vector de ataque, incluso con credenciales válidas.
+- Las contraseñas por sí solas son insuficientes.
+- La implementación de Autenticación Multifactor (MFA) agrega una capa defensiva crítica que bloquea el acceso incluso si la contraseña es comprometida.
 
 **Posibles vectores de ataque**
 | Vulnerabilidad | Mitigación | 
