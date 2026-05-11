@@ -41,7 +41,7 @@ Demostrar cómo un atacante puede vulnerar una contraseña débil mediante un at
 #### 1. Preparar el diccionario (Kali Linux)
 Para este laboratorio se hará uso del diccionario common-passwords-win.txt, proveniente de: [SectList](https://github.com/danielmiessler/SecLists/blob/master/Passwords/Common-Credentials/common-passwords-win.txt)
 
-### 2.  Realizar ataque Hydra contra SSH
+### 2. Realizar ataque Hydra contra SSH
 ```bash
 hydra -l ubuntu -P rockyou.txt ssh://IP
 ```
@@ -61,7 +61,15 @@ ssh ubuntu@IP
 Se logró acceder al sistema.
 
 ### Fase 2: Hardening - Implementación de MFA
-### 1. Instalar Google Authenticator PAM
+### 1.Instalar Google Authenticator PAM
 ```bash
 sudo apt install libpam-google-authenticator -y
+```
+
+### 2. Configurar MFA para el usuario
+```bash
+google-authenticator
+```
+```bash
+
 ```
