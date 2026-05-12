@@ -166,3 +166,19 @@ Mediante Tunneling incluso **HTTP** resulta ilegible.
 | Prevención | Todo sitio que maneje credenciales debe usar HTTPS
 | Detección | Wireshark permite verificar si hay tráfico HTTP no cifrado |
 | Respuesta | Migrar servicios inseguros a HTTPS o túneles SSH |
+
+**Cumplimiento Ley 21.663:**
+| Requisito | Implementación |
+|---|---|
+| Protección de datos | HTTPS cifra comunicaciones |
+| Confidencialidad | TLS evita exposición en texto plano |
+| Seguridad | SSH tunneling como capa adicional | 
+
+---
+### Recomendaciones
+| Prioridad | Medida | Fundamento |
+|---|---|---|
+| 🔴 Alta | Todo sitio debe usar HTTPS | Credenciales nunca en texto plano |
+| 🔴 Alta | Configurar redirección HTTP → HTTPS | Evita que usuarios accedan por error a HTTP |
+| 🟡 Media | Usar SSH tunneling para servicios internos | Protege tráfico sin certificado |
+| 🟡 Media | Monitorear tráfico sospechoso | Detectar servicios inseguros en la red |
