@@ -162,8 +162,8 @@ Las contraseñas se roban, filtran o adivinan. MFA añade una segunda capa (algo
 ---
 
 ### Recomendaciones en entornos productivos
-| Medida | Implementación |
-|---|---|
-| MFA obligatorio | Todo acceso SSH debe requerir contraseña + token (o llave + token) | 
-| Rate limiting | Limitar muestran intentos fallidos |
-| Monitoreo | Logs para detectar intentos fallidos de MFA |
+| Prioridad | Medida | Fundamento |
+|---|---|---|
+| 🔴 Alta | MFA obligatorio | Todo acceso SSH debe requerir contraseña + token |
+| 🔴 Alta | Rate limiting | Prevenir fuerza bruta al MFA | 
+| 🟡 Media | Monitoreo | Logs para detectar intentos fallidos |
