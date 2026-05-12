@@ -143,12 +143,23 @@ Logs desde el servidor.
 
 Las contraseñas se roban, filtran o adivinan. MFA añade una segunda capa (algo que tienes) que el atacante no posee.
 
+---
+
 **Aplicación Defensiva:**
 | Acción | Implementación | 
 |---|---|
 | Prevención | MFA bloquea acceso incluso con contraseñas comprometidas |
 | Detección | Logs muestran intentos fallidos | 
 | Respuesta | Rate limiting dificulta ataques automatizados |
+
+**Cumplimiento Ley 21.663:**
+| Requisito | Implementación | 
+|---|---|
+| Control de acceso a sistemas críticos | Exige medidas proporcionales al riesgo. |
+| Protección contra acceso no autorizado | Segundo factor impide acceso solo con credenciales |
+| Trazabilidad | Logs de intentos de acceso |
+
+---
 
 ### Recomendaciones en entornos productivos
 | Medida | Implementación |
