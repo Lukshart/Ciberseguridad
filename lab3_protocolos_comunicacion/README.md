@@ -18,7 +18,7 @@ Demostrar cómo un atacante puede capturar credenciales en texto plano en tráfi
 | **Servidor web** | Ubuntu con Apache en HTTP (formulario de login) |
 | **Vulnerabilidad** | Credenciales viajan en texto plano |
 | **Ataque** | Sniffing con Wireshark captura usuario/contraseña |
-| **Defensa** | HTTPS (Certbot) + SSH Tunneling |
+| **Defensa** | HTTPS + SSH Tunneling |
 
 ---
 
@@ -105,7 +105,7 @@ sudo systemctl restart apache2
 ---
 **Filtro:**
 ```bash
-tls and ip.dst == 192.168.1.55
+tls and ip.dst == IP
 ```
 <img width="1064" height="220" alt="image" src="https://github.com/user-attachments/assets/b621d730-cef8-4204-86e3-d7c92788e523" />
 
