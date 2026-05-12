@@ -31,7 +31,7 @@ Cada laboratorio simula un escenario real de ataque y defensa, aplicando herrami
 | # | Laboratorio | Tema | Estado |
 |---|-------------|------|--------|
 | 1 | [Lab 1 →](lab1_firma_digital/README.md) | Firma Digital y Verificación de Integridad | ✅ Completado |
-| 2 | [Lab 2 →](lab2_ataque_credenciales/README.md) | Ataque y Defensa de Credenciales (MFA) | ✅ Completado |
+| 2 | [Lab 2 →](lab2_gestion_contraseñas/README.md) | Ataque y Defensa de Credenciales (MFA) | ✅ Completado |
 | 3 | [Lab 3 →](lab3_protocolos_comunicacion/README.md) | Protocolos de Comunicación Seguros (HTTPS/SSH) | ✅ Completado |
 
 <details>
