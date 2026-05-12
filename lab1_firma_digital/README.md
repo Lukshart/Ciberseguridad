@@ -284,10 +284,10 @@ El laboratorio demuestra que la firma digital y la verificación de integridad s
 | Trazabilidad de acciones | La firma digital provee no repudio |
 
 ### Recomendaciones
-| Prioridad | Medida |
-|---------|---------|
-| 🔴Alta | Firmar **TODOS** los binarios y configuraciones antes de producción |
-| 🔴Alta | Verificar firma y hashes en cada despliegue |
-| 🔴Alta | Rotar la llave cada 6 - 12 meses |
-| 🟡Media | Almacenar llaves privadas en vaults |
-| 🟡Media | Automatizar bloqueo del pipeline si falla verificación |
+| Prioridad | Medida | Fundamento |
+|---|---|---|
+| 🔴Alta | Firmar **TODOS** los binarios y configuraciones antes de producción | Garantiza que el software desplegado es auténtico y no ha sido modificado desde su origen |
+| 🔴Alta | Verificar firma y hashes en cada despliegue | Aasegurar la autenticidad |
+| 🔴Alta | Rotar la llave cada 6 - 12 meses | Limita el impacto de una posible filtración de llaves | 
+| 🟡Media | Almacenar llaves privadas en vaults | Evita exposición de llaves |
+| 🟡Media | Automatizar bloqueo del pipeline si falla verificación | Impide que software manipulado llegue a producción |
