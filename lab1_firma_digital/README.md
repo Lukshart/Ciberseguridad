@@ -278,7 +278,7 @@ El laboratorio demuestra que la firma digital y la verificación de integridad s
 
 **Cumplimiento Ley 21.663:**
 
-| Requisito legal | Cumplimiento |
+| Requisito legal | Implementación |
 |---------|---------|
 | Integridad de activos críticos | Los hashes detectan cualquier alteración |
 | Trazabilidad de acciones | La firma digital provee no repudio |
