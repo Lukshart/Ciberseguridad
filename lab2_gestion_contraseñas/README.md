@@ -143,9 +143,16 @@ Logs desde el servidor.
 
 Las contraseñas se roban, filtran o adivinan. MFA añade una segunda capa (algo que tienes) que el atacante no posee.
 
+**Aplicación Defensiva:**
+| Acción | Implementación | 
+|---|---|
+| Prevención | MFA bloquea acceso incluso con contraseñas comprometidas |
+| Detección | Logs muestran intentos fallidos | 
+| Respuesta | Rate limiting dificulta ataques automatizados |
+
 ### Recomendaciones en entornos productivos
 | Medida | Implementación |
 |---|---|
 | MFA obligatorio | Todo acceso SSH debe requerir contraseña + token (o llave + token) | 
-| Rate limiting | Limitar intentos fallidos |
+| Rate limiting | Limitar muestran intentos fallidos |
 | Monitoreo | Logs para detectar intentos fallidos de MFA |
