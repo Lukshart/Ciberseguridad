@@ -55,5 +55,3 @@ Cada laboratorio simula un escenario real de ataque y defensa, aplicando herrami
 |-------------|---------|-------------|
 | Kali Linux | 2024.1+ | Preinstalado en máquina virtual |
 | Ubuntu Server | 22.04 LTS | Preinstalado en máquina virtual |
-| OpenSSL | 3.0+ | `sudo apt install openssl` |
-| Git | 2.25+ | `sudo apt install git` |
