@@ -20,9 +20,9 @@ Cada laboratorio simula un escenario real de ataque y defensa, aplicando herrami
 
 | Área | Tecnologías |
 |------|-------------|
-| 🔐 Criptografía | OpenSSL, SHA-256, RSA |
-|  |  |
-|  |  |
+| 🔐 Criptografía | OpenSSL, SHA-256, RSA, GPG |
+| 🔑 Defensa de Credenciales | Hydra, Google Authenticator, PAM |
+| 🌐 Comunicaciones Seguras | Wireshark, TLS/SSL, Apache, SSH Tunneling |
 
 ---
 
@@ -30,18 +30,18 @@ Cada laboratorio simula un escenario real de ataque y defensa, aplicando herrami
 
 | # | Laboratorio | Tema | Estado |
 |---|-------------|------|--------|
-| 1 | [Lab 1 →](lab1_firma_digital) | **Firma Digital y Verificación de Integridad** | ✅ Completado |
-| 2 | [Lab 2 →](lab2_gestion_contraseñas) | **Ataque y Defensa de Contraseñas** | ✅ Completado |
-| 3 | [Lab 3 →](lab3/README.md) | **** | 🔄 En progreso |
+| 1 | [Lab 1 →](lab1_firma_digital/README.md) | Firma Digital y Verificación de Integridad | ✅ Completado |
+| 2 | [Lab 2 →](lab2_ataque_credenciales/README.md) | Ataque y Defensa de Credenciales (MFA) | ✅ Completado |
+| 3 | [Lab 3 →](lab3_protocolos_comunicacion/README.md) | Protocolos de Comunicación Seguros (HTTPS/SSH) | ✅ Completado |
 
 <details>
 <summary>📖 <b>Ver detalles de cada laboratorio</b></summary>
 
 | Laboratorio | Qué aprenderás |
 |-------------|----------------|
-| **Lab 1** | Generación de llaves RSA, firma digital, verificación de integridad con OpenSSL |
-| **Lab 2** |  |
-| **Lab 3** |  |
+| **Lab 1** | Generación de llaves RSA, firma digital, verificación de integridad con OpenSSL, manifiestos de software |
+| **Lab 2** | Ataque de diccionario con Hydra, defensa con MFA (Google Authenticator), configuración PAM en SSH |
+| **Lab 3** | Sniffing de credenciales con Wireshark, configuración de HTTPS con certificados autofirmados, SSH tunneling |
 
 </details>
 
