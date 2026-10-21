@@ -1,0 +1,2 @@
+id_hallazgo,id_activo,cve,cvss,kev,criticidad_activo,prioridad,sla,estado,evidencia
+VULN-001,ACT-001,Pendiente,Pendiente,Pendiente,Pendiente,Pendiente,Pendiente,Abierto,Completar

@@ -6,6 +6,7 @@ Esta sección presenta evidencia de un ciclo práctico de gestión de seguridad:
 
 | Área | Propósito | Evidencia existente relacionada |
 |---|---|---|
+| [Plan de desarrollo](00-plan-santander/README.md) | Hoja de ruta, Bitácora 2 y matriz de competencias | Entregables en preparación |
 | [Gestión de vulnerabilidades](01-gestion-vulnerabilidades/README.md) | Registrar, priorizar y remediar hallazgos | Laboratorios 2 y 3 |
 | [Hardening](02-hardening/README.md) | Definir y validar configuraciones seguras | Laboratorios 1, 2 y 3 |
 | [Gestión de riesgos](03-gestion-riesgos/README.md) | Evaluar impacto, probabilidad y tratamiento | Los tres laboratorios |
