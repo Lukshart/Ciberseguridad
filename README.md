@@ -1,39 +1,44 @@
 # Matías Eduardo Alamos Hinojosa
 
-**Security Engineer en formación**
+Security Engineer en formación · Gestión de vulnerabilidades · Hardening · Gestión de riesgos
 
-Estudiante del Instituto Profesional Santo Tomás, orientado a diseñar, implementar y verificar controles de seguridad. Este repositorio reúne mi formación aplicada en gestión de vulnerabilidades, hardening, riesgos y protección de sistemas.
+Estudiante del Instituto Profesional Santo Tomás, enfocado en construir y verificar controles de seguridad reproducibles en entornos de laboratorio.
 
-[Perfil](#perfil) · [Competencias](#competencias) · [Evidencia práctica](#evidencia-práctica) · [Formación](#formación) · [Portafolio](#portafolio)
+La evidencia publicada documenta problemas, riesgos, controles y resultados de forma transparente. No representa experiencia profesional ni incluye información de sistemas reales.
 
-## Perfil
+## Enfoque actual
 
-Mi objetivo es desarrollarme como **Security Engineer**, participando en la reducción de riesgos técnicos mediante controles de acceso, comunicaciones seguras, validación de integridad y gestión de vulnerabilidades.
+Estoy desarrollando competencias para aportar como Security Engineer en cuatro áreas: gestión de vulnerabilidades, hardening, protección de identidades y comunicaciones seguras. Mi objetivo es convertir hallazgos técnicos en decisiones de riesgo, remediaciones verificables y evidencia útil para revisión.
 
-La evidencia publicada corresponde exclusivamente a entornos de laboratorio y actividades académicas. No contiene secretos, datos personales ni información de sistemas reales.
+## Proyectos y evidencia práctica
 
-## Competencias
+Cada evidencia incluye problema, alcance, hallazgos vinculados a riesgos, pasos reproducibles, remediación y aprendizaje.
 
-- Gestión y priorización de vulnerabilidades.
-- Hardening de servicios Linux, SSH y aplicaciones web.
-- Autenticación multifactor, PAM y controles contra fuerza bruta.
-- HTTPS, TLS y túneles SSH para proteger datos en tránsito.
-- Integridad de artefactos mediante SHA-256 y firmas RSA.
-- Evaluación de riesgos, tratamiento y documentación de riesgo residual.
+- [Firma digital y verificación de integridad](lab1_firma_digital/EVIDENCIA.md) — Protección de artefactos frente a modificaciones no autorizadas mediante SHA-256, RSA y manifiestos firmados.
+- [Gestión de contraseñas y MFA](lab2_gestion_contraseñas/EVIDENCIA.md) — Reducción del riesgo de acceso SSH no autorizado con MFA, PAM, rate limiting y registros.
+- [Protocolos de comunicación seguros](lab3_protocolos_comunicacion/EVIDENCIA.md) — Prevención de exposición de credenciales en tránsito mediante HTTPS y túneles SSH.
 
-## Evidencia práctica
+Los procedimientos completos originales permanecen disponibles en los [laboratorios](#laboratorios-originales).
 
-### [Firma digital y verificación de integridad](lab1_firma_digital/README.md)
+## Metodología de evidencia
 
-Demostración de integridad y autenticidad de archivos con SHA-256, RSA y manifiestos firmados. El caso relaciona la validación criptográfica con la protección de artefactos antes de un despliegue.
+Para cada caso publicado se aplican estas reglas:
 
-### [Gestión de contraseñas y MFA](lab2_gestion_contraseñas/README.md)
+1. Explicar el problema que se resolvió y su contexto.
+2. Conectar los hallazgos técnicos con riesgos para el activo.
+3. Mostrar evidencia reproducible en un entorno autorizado.
+4. Proponer o aplicar una remediación verificable.
+5. Aclarar alcance, supuestos y reglas del laboratorio.
+6. Registrar el aprendizaje y el riesgo residual.
 
-Escenario de acceso SSH con contraseña débil, seguido de hardening mediante MFA, PAM, limitación de intentos y revisión de registros de autenticación.
+Las [plantillas de documentación](portfolio/plantillas/) permiten extender este estándar a nuevos casos.
 
-### [Protocolos de comunicación seguros](lab3_protocolos_comunicacion/README.md)
+## Herramientas y fundamentos técnicos
 
-Comparación entre HTTP y comunicaciones protegidas mediante HTTPS o túneles SSH, orientada a evitar la exposición de credenciales en texto plano.
+- **Sistemas y acceso:** Linux, SSH, PAM, MFA y registros de autenticación.
+- **Redes y comunicaciones:** HTTP/HTTPS, TLS, Wireshark y túneles SSH.
+- **Criptografía aplicada:** SHA-256, RSA, OpenSSL y firmas digitales.
+- **Gestión de seguridad:** inventario de activos, remediación, matrices de riesgo y métricas.
 
 ## Formación
 
@@ -41,13 +46,15 @@ Comparación entre HTTP y comunicaciones protegidas mediante HTTPS o túneles SS
 
 Formación en ciberseguridad y desarrollo de actividades prácticas documentadas en este repositorio.
 
-## Portafolio
+## Portafolio de gestión de seguridad
 
-El trabajo se organiza en cuatro áreas complementarias:
+- [Gestión de vulnerabilidades](portfolio/01-gestion-vulnerabilidades/README.md)
+- [Hardening](portfolio/02-hardening/README.md)
+- [Gestión de riesgos](portfolio/03-gestion-riesgos/README.md)
+- [Métricas](portfolio/04-metricas/README.md)
 
-- [Gestión de vulnerabilidades](portfolio/01-gestion-vulnerabilidades/README.md): inventario, registro de hallazgos y remediación.
-- [Hardening](portfolio/02-hardening/README.md): líneas base para Ubuntu/SSH y servicios web.
-- [Gestión de riesgos](portfolio/03-gestion-riesgos/README.md): matriz, tratamiento y riesgo residual.
-- [Métricas](portfolio/04-metricas/README.md): indicadores de cobertura, remediación y riesgo.
+## Laboratorios originales
 
-También están disponibles las [plantillas](portfolio/plantillas/) para documentar nuevos hallazgos, evidencias y excepciones de riesgo.
+- [Lab 1: Firma digital y verificación de integridad](lab1_firma_digital/README.md)
+- [Lab 2: Gestión de contraseñas y MFA](lab2_gestion_contraseñas/README.md)
+- [Lab 3: Protocolos de comunicación seguros](lab3_protocolos_comunicacion/README.md)
