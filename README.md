@@ -1,71 +1,73 @@
-# 🛡️ LABORATORIOS DE CIBERSEGURIDAD 🛡️
-![Status](https://img.shields.io/badge/STATUS-EN_DESARROLLO-yellow)
-![License](https://img.shields.io/badge/license-MIT-green)
-![Kali](https://img.shields.io/badge/Kali_Linux-557C94?logo=kalilinux&logoColor=white)
-![Ubuntu](https://img.shields.io/badge/Ubuntu-E95420?logo=ubuntu&logoColor=white)
+# Portafolio de Gestión de Ciberseguridad
 
----
+![Estado](https://img.shields.io/badge/portafolio-en%20desarrollo-yellow)
+![Enfoque](https://img.shields.io/badge/enfoque-defensivo-2ea44f)
+![Laboratorios](https://img.shields.io/badge/evidencias-3-blue)
+![Licencia](https://img.shields.io/badge/licencia-MIT-green)
 
-## 📋 Tabla de Contenidos
+Repositorio orientado a demostrar competencias prácticas en gestión de vulnerabilidades, hardening, gestión de riesgos y métricas de seguridad. Cada caso se documenta con su contexto, controles aplicados, verificación y riesgo residual.
 
-- [🎯 Descripción General](#-descripción-general)
-- [📊 Laboratorios](#-laboratorios)
-- [Portafolio profesional](#portafolio-profesional)
-
----
-
-## 🎯 Descripción General
-
-Repositorio que contiene **laboratorios prácticos** de Ciberseguridad.  
-Cada laboratorio simula un escenario real de ataque y defensa, aplicando herramientas y marcos de trabajo estándar de la industria.
-
-| Área | Tecnologías |
-|------|-------------|
-| 🔐 Criptografía | OpenSSL, SHA-256, RSA, GPG |
-| 🔑 Defensa de Credenciales | Hydra, Google Authenticator, PAM |
-| 🌐 Comunicaciones Seguras | Wireshark, TLS/SSL, Apache, SSH Tunneling |
-
----
-
-## 📊 Laboratorios
-
-| # | Laboratorio | Tema | Estado |
-|---|-------------|------|--------|
-| 1 | [Lab 1 →](lab1_firma_digital/README.md) | Firma Digital y Verificación de Integridad | ✅ Completado |
-| 2 | [Lab 2 →](lab2_gestion_contraseñas/README.md) | Ataque y Defensa de Credenciales (MFA) | ✅ Completado |
-| 3 | [Lab 3 →](lab3_protocolos_comunicacion/README.md) | Protocolos de Comunicación Seguros (HTTPS/SSH) | ✅ Completado |
-
-<details>
-<summary>📖 <b>Ver detalles de cada laboratorio</b></summary>
-
-| Laboratorio | Qué aprenderás |
-|-------------|----------------|
-| **Lab 1** | Generación de llaves RSA, firma digital, verificación de integridad con OpenSSL, manifiestos de software |
-| **Lab 2** | Ataque de diccionario con Hydra, defensa con MFA (Google Authenticator), configuración PAM en SSH |
-| **Lab 3** | Sniffing de credenciales con Wireshark, configuración de HTTPS con certificados autofirmados, SSH tunneling |
-
-</details>
-
----
+> Todo el contenido se desarrolla en entornos de laboratorio y con fines educativos. No se incluyen secretos, datos personales ni información de sistemas reales.
 
 ## Portafolio profesional
 
-Además de los laboratorios académicos, este repositorio incorpora un [portafolio de gestión de seguridad](portfolio/README.md). La sección reúne casos documentados, líneas base, matrices y métricas para demostrar un proceso de trabajo reproducible, sin modificar la evidencia original de los laboratorios.
+El [portafolio](portfolio/README.md) es el punto de partida del repositorio. Organiza el trabajo en un ciclo de seguridad trazable: identificar, priorizar, proteger, verificar y medir.
 
-| Dominio | Evidencia relacionada |
+| Dominio | Qué demuestra | Acceso |
+|---|---|---|
+| Gestión de vulnerabilidades | Inventario de activos, registro de hallazgos y plan de remediación | [Ver sección](portfolio/01-gestion-vulnerabilidades/README.md) |
+| Hardening | Líneas base para Ubuntu/SSH y servicios web | [Ver sección](portfolio/02-hardening/README.md) |
+| Gestión de riesgos | Matriz, tratamiento y riesgo residual | [Ver sección](portfolio/03-gestion-riesgos/README.md) |
+| Métricas | Indicadores de cobertura, tiempos de remediación y riesgo | [Ver sección](portfolio/04-metricas/README.md) |
+
+## Competencias aplicadas
+
+| Área | Prácticas y controles |
 |---|---|
-| Gestión de vulnerabilidades | Priorización, registro y plan de remediación |
-| Hardening | Líneas base verificables para Ubuntu y servicios web |
-| Gestión de riesgos | Matriz, tratamiento y aceptación de riesgo residual |
-| Métricas | Indicadores de cobertura, remediación y riesgo |
+| Protección de accesos | MFA, limitación de intentos, registros de autenticación y mínimo privilegio |
+| Comunicaciones seguras | HTTPS, TLS, túneles SSH y detección de tráfico en texto plano |
+| Integridad de software | Hashes, firmas digitales y validación de manifiestos antes del despliegue |
+| Gestión operativa | Priorización de hallazgos, tratamiento de riesgos y métricas de seguimiento |
 
----
+## Evidencias prácticas
 
-## 🛠️ Requisitos
+Los siguientes laboratorios constituyen un mini portafolio de evidencias. Cada uno expone un escenario, demuestra el riesgo de forma controlada, aplica un control defensivo y valida el resultado.
 
-### Software necesario
+| Evidencia | Problema abordado | Control aplicado | Competencia demostrada |
+|---|---|---|---|
+| [Firma digital e integridad](lab1_firma_digital/README.md) | Manipulación de archivos y artefactos de despliegue | RSA, SHA-256 y manifiestos firmados | Integridad, autenticidad y despliegue seguro |
+| [Gestión de contraseñas y MFA](lab2_gestion_contraseñas/README.md) | Contraseñas débiles y ataques de diccionario contra SSH | MFA, PAM, rate limiting y logs | Hardening de acceso y defensa de credenciales |
+| [Protocolos de comunicación seguros](lab3_protocolos_comunicacion/README.md) | Exposición de credenciales en HTTP | HTTPS, TLS y túneles SSH | Protección de datos en tránsito |
 
-| Herramienta | Versión | Instalación |
-|-------------|---------|-------------|
-| Kali Linux (o equivalente)| 2024.1+ | Preinstalado en máquina virtual |
-| Ubuntu Server | 22.04 LTS | Preinstalado en máquina virtual |
+### Relación entre evidencias y el portafolio
+
+| Evidencia | Vulnerabilidades | Hardening | Riesgos | Métricas |
+|---|:---:|:---:|:---:|:---:|
+| Firma digital e integridad | ✓ | ✓ | ✓ | ✓ |
+| MFA en SSH | ✓ | ✓ | ✓ | ✓ |
+| HTTPS y túneles SSH | ✓ | ✓ | ✓ | ✓ |
+
+## Estructura del repositorio
+
+```text
+portfolio/                         # Portafolio profesional y plantillas
+├── 01-gestion-vulnerabilidades/  # Inventario, registro y remediación
+├── 02-hardening/                 # Líneas base verificables
+├── 03-gestion-riesgos/           # Matriz y tratamiento
+├── 04-metricas/                  # Indicadores y tablero
+└── plantillas/                   # Hallazgos, evidencias y excepciones
+
+lab1_firma_digital/               # Evidencia: integridad y firma
+lab2_gestion_contraseñas/         # Evidencia: MFA y SSH
+lab3_protocolos_comunicacion/     # Evidencia: HTTPS y túneles SSH
+```
+
+## Forma de documentar nuevos casos
+
+1. Definir activo, alcance y riesgo.
+2. Registrar evidencia segura y anonimizada.
+3. Aplicar un control o tratamiento.
+4. Verificar el resultado.
+5. Actualizar el indicador y documentar el riesgo residual.
+
+Para mantener consistencia, usa las [plantillas del portafolio](portfolio/plantillas/).
