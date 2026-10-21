@@ -10,6 +10,7 @@
 
 - [🎯 Descripción General](#-descripción-general)
 - [📊 Laboratorios](#-laboratorios)
+- [Portafolio profesional](#portafolio-profesional)
 
 ---
 
@@ -44,6 +45,19 @@ Cada laboratorio simula un escenario real de ataque y defensa, aplicando herrami
 | **Lab 3** | Sniffing de credenciales con Wireshark, configuración de HTTPS con certificados autofirmados, SSH tunneling |
 
 </details>
+
+---
+
+## Portafolio profesional
+
+Además de los laboratorios académicos, este repositorio incorpora un [portafolio de gestión de seguridad](portfolio/README.md). La sección reúne casos documentados, líneas base, matrices y métricas para demostrar un proceso de trabajo reproducible, sin modificar la evidencia original de los laboratorios.
+
+| Dominio | Evidencia relacionada |
+|---|---|
+| Gestión de vulnerabilidades | Priorización, registro y plan de remediación |
+| Hardening | Líneas base verificables para Ubuntu y servicios web |
+| Gestión de riesgos | Matriz, tratamiento y aceptación de riesgo residual |
+| Métricas | Indicadores de cobertura, remediación y riesgo |
 
 ---
 
