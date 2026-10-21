@@ -1,75 +1,53 @@
 # Matías Eduardo Alamos Hinojosa
 
-## Security Engineer en formación
+**Security Engineer en formación**
 
-![Enfoque](https://img.shields.io/badge/enfoque-Security%20Engineering-2ea44f)
-![Evidencias](https://img.shields.io/badge/evidencias%20prácticas-3-blue)
-![Dominios](https://img.shields.io/badge/dominios%20de%20seguridad-4-6f42c1)
+Estudiante del Instituto Profesional Santo Tomás, orientado a diseñar, implementar y verificar controles de seguridad. Este repositorio reúne mi formación aplicada en gestión de vulnerabilidades, hardening, riesgos y protección de sistemas.
 
-Portafolio de formación aplicada en ciberseguridad, enfocado en diseñar, implementar y verificar controles que reduzcan el riesgo técnico. Mi objetivo profesional es desarrollarme como **Security Engineer**, combinando gestión de vulnerabilidades, hardening, protección de accesos y comunicaciones seguras.
+[Perfil](#perfil) · [Competencias](#competencias) · [Evidencia práctica](#evidencia-práctica) · [Formación](#formación) · [Portafolio](#portafolio)
 
-> Trabajo documentado exclusivamente en entornos de laboratorio y con fines educativos. No se incluyen secretos, datos personales ni información de sistemas reales.
+## Perfil
 
-| 3 | 4 | 100 % |
-|---:|---:|---:|
-| Evidencias prácticas documentadas | Dominios de gestión de seguridad | Actividades realizadas en laboratorio |
+Mi objetivo es desarrollarme como **Security Engineer**, participando en la reducción de riesgos técnicos mediante controles de acceso, comunicaciones seguras, validación de integridad y gestión de vulnerabilidades.
 
-## Sobre mí
+La evidencia publicada corresponde exclusivamente a entornos de laboratorio y actividades académicas. No contiene secretos, datos personales ni información de sistemas reales.
 
-Estudiante del **Instituto Profesional Santo Tomás**, orientado a Security Engineering. Construyo evidencia práctica a partir de escenarios controlados: identifico el riesgo, aplico controles defensivos, verifico su resultado y documento el riesgo residual.
+## Competencias
 
-Actualmente desarrollo mi base técnica mediante laboratorios, investigación guiada y documentación reproducible. Este repositorio muestra ese proceso, no certificaciones ni experiencia que aún no poseo.
+- Gestión y priorización de vulnerabilidades.
+- Hardening de servicios Linux, SSH y aplicaciones web.
+- Autenticación multifactor, PAM y controles contra fuerza bruta.
+- HTTPS, TLS y túneles SSH para proteger datos en tránsito.
+- Integridad de artefactos mediante SHA-256 y firmas RSA.
+- Evaluación de riesgos, tratamiento y documentación de riesgo residual.
 
-## Competencias aplicadas
+## Evidencia práctica
 
-| Área | Prácticas y controles demostrados |
-|---|---|
-| Protección de accesos | MFA, PAM, limitación de intentos y análisis de registros de autenticación |
-| Comunicaciones seguras | HTTPS, TLS, túneles SSH y verificación de tráfico cifrado |
-| Integridad de software | SHA-256, firmas RSA y validación de manifiestos antes del despliegue |
-| Gestión de seguridad | Priorización de hallazgos, tratamiento de riesgos y métricas de seguimiento |
+### [Firma digital y verificación de integridad](lab1_firma_digital/README.md)
 
-## Evidencias prácticas
+Demostración de integridad y autenticidad de archivos con SHA-256, RSA y manifiestos firmados. El caso relaciona la validación criptográfica con la protección de artefactos antes de un despliegue.
 
-Los laboratorios son un mini portafolio de casos aplicados. Cada uno presenta el escenario, el riesgo, el control defensivo y su validación.
+### [Gestión de contraseñas y MFA](lab2_gestion_contraseñas/README.md)
 
-| Evidencia | Riesgo abordado | Control aplicado | Competencia demostrada |
-|---|---|---|---|
-| [Firma digital e integridad](lab1_firma_digital/README.md) | Manipulación de archivos y artefactos de despliegue | RSA, SHA-256 y manifiestos firmados | Integridad, autenticidad y despliegue seguro |
-| [Gestión de contraseñas y MFA](lab2_gestion_contraseñas/README.md) | Contraseñas débiles y ataques de diccionario contra SSH | MFA, PAM, rate limiting y logs | Hardening de acceso y defensa de credenciales |
-| [Protocolos de comunicación seguros](lab3_protocolos_comunicacion/README.md) | Exposición de credenciales en HTTP | HTTPS, TLS y túneles SSH | Protección de datos en tránsito |
+Escenario de acceso SSH con contraseña débil, seguido de hardening mediante MFA, PAM, limitación de intentos y revisión de registros de autenticación.
 
-## Portafolio profesional
+### [Protocolos de comunicación seguros](lab3_protocolos_comunicacion/README.md)
 
-El [portafolio de gestión de seguridad](portfolio/README.md) reúne las plantillas y artefactos que convierten las evidencias técnicas en un proceso trazable.
-
-| Dominio | Qué contiene | Acceso |
-|---|---|---|
-| Gestión de vulnerabilidades | Inventario de activos, registro de hallazgos y plan de remediación | [Ver sección](portfolio/01-gestion-vulnerabilidades/README.md) |
-| Hardening | Líneas base para Ubuntu/SSH y servicios web | [Ver sección](portfolio/02-hardening/README.md) |
-| Gestión de riesgos | Matriz, tratamiento y riesgo residual | [Ver sección](portfolio/03-gestion-riesgos/README.md) |
-| Métricas | Indicadores de cobertura, remediación y riesgo | [Ver sección](portfolio/04-metricas/README.md) |
-
-### Cómo se conectan las evidencias
-
-| Evidencia | Vulnerabilidades | Hardening | Riesgos | Métricas |
-|---|:---:|:---:|:---:|:---:|
-| Firma digital e integridad | ✓ | ✓ | ✓ | ✓ |
-| MFA en SSH | ✓ | ✓ | ✓ | ✓ |
-| HTTPS y túneles SSH | ✓ | ✓ | ✓ | ✓ |
+Comparación entre HTTP y comunicaciones protegidas mediante HTTPS o túneles SSH, orientada a evitar la exposición de credenciales en texto plano.
 
 ## Formación
 
-| Institución | Formación | Estado |
-|---|---|---|
-| Instituto Profesional Santo Tomás | Formación en ciberseguridad y actividades prácticas documentadas en este repositorio | En curso |
+**Instituto Profesional Santo Tomás**
 
-## Método de trabajo
+Formación en ciberseguridad y desarrollo de actividades prácticas documentadas en este repositorio.
 
-1. Definir activo, alcance y riesgo del caso.
-2. Registrar evidencia segura y anonimizada.
-3. Aplicar un control o tratamiento.
-4. Verificar el resultado.
-5. Documentar el riesgo residual y actualizar las métricas.
+## Portafolio
 
-Las [plantillas](portfolio/plantillas/) permiten mantener este formato en futuras evidencias.
+El trabajo se organiza en cuatro áreas complementarias:
+
+- [Gestión de vulnerabilidades](portfolio/01-gestion-vulnerabilidades/README.md): inventario, registro de hallazgos y remediación.
+- [Hardening](portfolio/02-hardening/README.md): líneas base para Ubuntu/SSH y servicios web.
+- [Gestión de riesgos](portfolio/03-gestion-riesgos/README.md): matriz, tratamiento y riesgo residual.
+- [Métricas](portfolio/04-metricas/README.md): indicadores de cobertura, remediación y riesgo.
+
+También están disponibles las [plantillas](portfolio/plantillas/) para documentar nuevos hallazgos, evidencias y excepciones de riesgo.
