@@ -1,0 +1,11 @@
+<!--
+  Red aislada para laboratorios propios de seguridad.
+  No tiene salida a Internet ni DHCP: las VMs usan IPs estáticas.
+-->
+<network>
+  <name>lab-seguridad</name>
+  <forward mode='none'/>
+  <bridge name='virbr-labsec' stp='on' delay='0'/>
+  <domain name='lab.internal' localOnly='yes'/>
+  <ip address='192.168.56.1' netmask='255.255.255.0'/>
+</network>
